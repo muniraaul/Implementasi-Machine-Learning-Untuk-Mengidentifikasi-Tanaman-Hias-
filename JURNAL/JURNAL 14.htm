@@ -1,0 +1,832 @@
+	
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- meta description -->
+
+    <title>PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING | Pratama | J@ti Undip: Jurnal Teknik Industri</title> 
+    <meta name="description" content="PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING">
+            <meta name="keywords" content="decision tree; derating; machine learning; maintenance management" />
+    
+                <meta name="gs_meta_revision" content="1.1" />
+
+<meta name="citation_journal_title" content="J@ti Undip: Jurnal Teknik Industri"/>
+<meta name="citation_publisher" content="Departemen Teknik Industri, Fakultas Teknik, Universitas Diponegoro">
+<meta name="citation_issn" content="2502-1516"/>
+<meta name="citation_author" content="Bonifasius Yoga Adi Pratama"/>
+<meta name="citation_author_institution" content="Universitas Gadjah Mada"/>
+<meta name="citation_author" content="Hari Agung Yuniarto"/>
+<meta name="citation_author_institution" content="Universitas Gadjah Mada"/>
+
+                                    
+
+                        
+<meta name="citation_title" content="PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING"/>
+
+<meta name="citation_date" content="2021/06/11"/>
+<meta name="citation_publication_date" content="2021/06/11"/>
+
+<meta name="citation_volume" content="16"/>
+<meta name="citation_issue" content="2"/>
+
+	<meta name="citation_firstpage" content="134"/>
+		<meta name="citation_lastpage" content="142"/>
+						<meta name="citation_doi" content="10.14710/jati.16.2.134-142"/>
+	<meta name="citation_abstract_html_url" content="https://ejournal.undip.ac.id/index.php/jgti/article/view/35232"/>
+<meta name="citation_language" content="id"/>
+			<meta name="citation_keywords" xml:lang="en" content="decision tree"/>
+					<meta name="citation_keywords" xml:lang="en" content="derating"/>
+					<meta name="citation_keywords" xml:lang="en" content="machine learning"/>
+					<meta name="citation_keywords" xml:lang="en" content="maintenance management"/>
+						<meta name="citation_pdf_url" content="https://ejournal.undip.ac.id/index.php/jgti/article/download/35232/19798"/>
+			        <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+
+	<meta name="DC.Contributor.Sponsor" xml:lang="en" content="Universitas Gadjah Mada"/>
+	<meta name="DC.Creator.PersonalName" content="Bonifasius Yoga Adi Pratama"/>
+	<meta name="DC.Creator.PersonalName" content="Hari Agung Yuniarto"/>
+    <meta name="DC.Date.created" scheme="ISO8601" content="2021-06-11"/>
+    <meta name="DC.created" scheme="ISO8601" content="2021/06/11"/>
+	<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2020-12-23"/>
+
+<meta name="DC.Date.issued" content="2021/06/11"/>
+<meta name="DC.issued" content="2021/06/11"/>
+	<meta name="DC.Date.modified" scheme="ISO8601" content="2021-06-11"/>
+	<meta name="DC.Description" xml:lang="en" content="  Derating menjadi masalah yang sering kali muncul pada generator diesel di pembangkit listrik. Derating dapat menyebabkan penurunan kinerja dan produksi listrik pada generator. Kapasitas produksi listrik yang menurun nantinya akan menjadi masalah jika melihat kondisi konsumsi listrik nasional yang terus meningkat dari tahun ke tahun. Derating sering kali terjadi karena suhu yang tinggi pada charge air. Pencegahan derating dapat dilakukan dengan mengimplementasikan strategi maintenance yang mampu memprediksi derating dan mengakomodasi perubahan suhu charge air sebagai penyebab terjadinya derating. Penelitian ini akan memperlihatkan rancangan implementasi strategi maintenance berbasis data untuk memprediksi terjadinya derating dengan menggunakan pendekatan machine learning. Rancangan proses ini akan memberikan gambaran proses seperti apa yang dapat digunakan untuk mencegah derating sehingga membantu menjaga performa generator. Tahapan implementasi machine learning dilakukan dengan mengimpelementasikan proses knowledge discovery from data pada proses yang ada dalam maintenance management. Evaluasi terkait proses maintenance management dan machine learning menunjukkan bahwa machine learning dapat diimplementasikan pada tahap controlling. Klasifikasi kondisi generator juga didasarkan pada trend kondisi suhu charge air sehingga prediksi kondisi generator terkait derating tidak dipengaruhi oleh perubahan suhu yang bersifat cepat dan sementara. Penjabaran proses yang ada menunjukkan bahwa implementasi machine learning dalam maintenance management ini mungkin untuk dilakukan.         Abstract     [    Designing The     Implementation Process of Machine Learning in Maintenance Management to Avoid Derating    ]      Derating is problem that often arises in power plant. Derating force generator to work below its optimum performance and resulting low production rate of electricity. Declining   of   electricity production capacity can be problem when we see condition of national electricity consumption in Indonesia which continues to increase year over year.   Derating often occurs due to high temperatures in charge air. Derating prevention can be done by implementing maintenance strategy that is able to predict derating and accommodate changes in charge air temperature.     This study designs processes of implementing data-based maintenance strategy to predict occurrence of derating using machine learning approach. Process design will provide overview of what kind of process can be used to avoid derating so that it helps maintain generator performance.     Machine learning implementation can be done by implementing process of knowledge discovery from data in existing maintenance management process.   Evaluations related to maintenance management and machine learning processes show that machine learning can be implemented at controlling stage. Classification of generator conditions is based on trend of charge air temperature so that prediction of generator conditions will not be affected by temporary changes in temperature. Process overview concludes that it is possible to implement machine learning in maintenance management.    Keywords  :  decision tree; derating; machine learning; maintenance management        "/>
+	<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+	<meta name="DC.Identifier.pageNumber" content="134-142"/>
+						<meta name="DC.Identifier.DOI" content="10.14710/jati.16.2.134-142"/>
+    <meta name="DC.Identifier" content="doi:10.14710/jati.16.2.134-142"/>
+    	<meta name="DC.Identifier.URI" content="https://ejournal.undip.ac.id/index.php/jgti/article/view/35232"/>
+	<meta name="DC.Language" scheme="ISO639-1" content="id"/>
+	<meta name="DC.Publisher" content="Departemen Teknik Industri, Fakultas Teknik, Universitas Diponegoro">
+	<meta name="DC.Rights" content="Copyright  2021 J@ti Undip : Jurnal Teknik Industri" />
+	<meta name="DC.Rights" content="http://creativecommons.org/licenses/by-sa/4.0"/>
+	<meta name="DC.Source" content="J@ti Undip: Jurnal Teknik Industri"/>
+    
+	<meta name="DC.Source.ISSN" content="2502-1516"/>
+    <meta name="DC.Source.Issue" content="2"/>
+	<meta name="DC.Source.URI" content="https://ejournal.undip.ac.id/index.php/jgti"/>
+    <meta name="DC.Source.Volume" content="16"/>
+				<meta name="DC.Subject" xml:lang="en" content="decision tree"/>
+						<meta name="DC.Subject" xml:lang="en" content="derating"/>
+						<meta name="DC.Subject" xml:lang="en" content="machine learning"/>
+						<meta name="DC.Subject" xml:lang="en" content="maintenance management"/>
+			
+                                        
+
+                        
+    <meta name="DC.Title" content="PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING"/>
+    
+            <meta name="DC.Source.Spage" content="134"/>
+                    <meta name="DC.Source.Epage" content="142"/>
+        	<meta name="DC.Type" content="Text.Serial.Journal"/>
+	<meta name="DC.Type.articleType" content="Research Articles"/>
+        
+        <script type="text/javascript" src="//cdn.plu.mx/widget-summary.js"></script>
+    
+    
+
+    <meta name="generator" content=" 2.4.8.1" />
+    <!-- Meta Developer -->
+    <meta name="designer" content="Mpg-Undip Theme by EDW,AWP,SAF,SAR@Diponegoro University">
+    <meta name="publisher" content="Diponegoro University">
+    <meta name="copyright" content="Diponegoro University">
+        <link rel="icon" type="images/ico" href="/plugins/themes/mpgUndip/templates/images/favicon.ico" />
+        <link rel="stylesheet" href="https://ejournal.undip.ac.id/lib/pkp/styles/pkp.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://ejournal.undip.ac.id/styles/compiled.css" type="text/css" /> 
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+        <link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
+
+
+        <link rel="stylesheet" href="/plugins/themes/mpgUndip/css/screen.css?version=2022" type="text/css" />
+    <link href="/plugins/themes/mpgUndip/css/print.css" media="print" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/plugins/themes/mpgUndip/css/additional.css" type="text/css" />
+
+    <!-- Base Jquery -->
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" async></script>
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+        <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/scroller/2.0.5/js/dataTables.scroller.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+
+    <!-- Default global locale keys for JavaScript -->
+    
+<script type="text/javascript">
+	jQuery.pkp = jQuery.pkp || { };
+	jQuery.pkp.locale = { };
+			
+				jQuery.pkp.locale.form_dataHasChanged = 'The data on this form has changed. Continue anyway?';
+	</script>
+    <!-- Compiled scripts -->
+    <script type="text/javascript" src="https://ejournal.undip.ac.id/js/pkp.min.js"></script>
+    <!-- Form validation -->
+     
+        <script type="text/javascript" src="https://ejournal.undip.ac.id/lib/pkp/js/lib/jquery/plugins/validate/jquery.validate.js"></script>
+        <script type="text/javascript">
+                <!--
+                // initialise plugins
+                $(function(){
+                        jqueryValidatorI18n("https://ejournal.undip.ac.id", "en_US"); // include the appropriate validation localization
+                        
+                });
+                
+
+                // -->
+        </script>
+    
+    
+    <style>
+        .pdfIcon { background-image: url('https://cdn1.iconfinder.com/data/icons/CrystalClear/16x16/mimetypes/pdf.png'); background-repeat: no-repeat;
+background-position: 0px; padding-left: 21px;}
+        @keyframes blinker { 0% {opacity: 0;}
+        }
+    </style>
+    
+
+            <link rel="stylesheet" href="https://ejournal.undip.ac.id/public/journals/43/custom.css" type="text/css" />
+        <link rel="stylesheet" href="https://ejournal.undip.ac.id/plugins/generic/orcidProfile/css/orcidProfile.css" type="text/css" />
+    
+
+        
+
+</head>
+
+<body id="pkp-common-openJournalSystems" data-spy="scroll" data-target=".navbarSpy">
+
+<a id="skip-to-content" href="#mainContent">skip to main content</a>
+
+<div id="container"> <!-- Page Container -->
+
+<div id="header" role="banner"> <!-- Header -->
+
+<div id="headerTitle" > <!-- Header: Title -->
+
+    
+    <figure>
+    <img data-src="https://ejournal.undip.ac.id/public/journals/43/pageHeaderTitleImage_en_US.png" alt="J@ti Undip : Jurnal Teknik Industri" class="lazyload"/>
+    </figure>
+    
+</div> <!-- End of headerTitle -->
+
+    <nav id="mainmenu" class="navbar navbar-expand-lg " role="navigation" style="margin-top: 1px">
+    <a class="navbar-brand" href="#">
+        J@TI
+    </a>
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#mpgUndipNavbar" aria-controls="mpgUndipNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <div id="mpgUndipNavbar" class="collapse navbar-collapse">
+      	<ul class="nav navbar-nav">
+			<li id="homeMenu" class="nav-item " role="presentation"> <a class="nav-link" href="https://ejournal.undip.ac.id/index.php/jgti/index"> <class="btn btn-info btn-lg"><i class="fa fa-home"></i> Home</a></li>
+
+             
+<li id="navAboutDropdown" class="nav-item dropdown navHover "> 
+    <a href="https://ejournal.undip.ac.id/index.php/jgti/about" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book"></i> About <span class="caret"></span></a>
+    <div class="dropdown-menu" id="navAbout" style="z-index: 100">
+        <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#focusAndScope">Focus and Scope</a>
+
+        <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#sectionPolicies">Section Policies</a>
+
+        <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#peerReviewProcess">Peer Review Process / Policy</a>
+
+        <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#publicationFrequency">Publication Frequency</a>
+
+        <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#openAccessPolicy">Open Access Policy</a>
+
+
+            <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#custom-0">Indexing</a>
+    
+            <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#custom-1">Publication Ethics</a>
+    
+            <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#custom-2">Publication Fee</a>
+    
+
+
+
+        <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/aboutThisPublishingSystem">About this Publishing System</a>
+
+    </div>
+</li>
+                        <li id="navPeople" class="nav-item dropdown navHover">
+                <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown"><i class="fa fa-user"></i> People <span class="caret"></span></a>
+                <div class="dropdown-menu">
+
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialTeam">Editorial Team</a>
+
+                                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/displayMembership/276/0">Mitra Bebestari (Peer-Reviewers)</a>
+
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/journalSponsorship">Publisher</a>
+
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/contact">Contact</a>
+                </div>
+            </li>
+    
+                        <li id="navSubmission" class="nav-item dropdown navHover">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-upload"></i> Submissions <span class="caret"></span></a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/submissions#onlineSubmissions">Online Submissions</a>
+
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/submissions#authorGuidelines">Author Guidelines</a>
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/submissions#copyrightNotice">Copyright Notice</a>
+
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/about/submissions#privacyStatement">Privacy Statement</a>
+
+                </div>
+            </li>
+
+            
+            <li id="navIssue" class="nav-item dropdown navHover" >
+                <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown"><i class="fa fa-file-text"></i> Issue <span class="caret"></span></a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/issue/current">Current</a>
+
+
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/issue/archive">Archives</a>
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/search/authors">Authors Index</a>
+
+                    <a class="dropdown-item" href="https://ejournal.undip.ac.id/index.php/jgti/search/titles">Titles Index</a>
+                </div>
+            </li>
+
+            <li id="announcementMenu" class="nav-item "><a href="https://ejournal.undip.ac.id/index.php/jgti/announcement" class="nav-link"><i class="fa fa-bullhorn"></i>  Announcements</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="https://scholar.google.co.id/citations?user=P0-5qJoAAAAJ&amp;hl=en"> Citations</a></li>
+    
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+                <form method="post" action="https://ejournal.undip.ac.id/index.php/jgti/search" class="navbar-form form-inline" style="margin:0;">
+            <div class="input-group search-box">
+                <input type="text" id="query" name="query" class="form-control" placeholder="Search contents">
+                <span class="input-group-append">
+                    <button class="btn btn-outline-light border border-left-0" type="submit" value="Search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+
+        
+    <ul class="nav nav-pills" style="margin: auto">
+    </ul>
+
+
+        
+                            <a href="https://ejournal.undip.ac.id/index.php/jgti/user/register" class="nav-item nav-link">Register</a>
+                <a href="https://ejournal.undip.ac.id/index.php/jgti/login" class="nav-item nav-link">Login</a>
+            
+        </ul>
+    </div>
+</nav>
+</div> <!-- End of header -->
+
+
+
+<div id="body" class="row" > <!-- Page Body -->
+
+
+	<div id="topBar">
+					</div>
+    <div class="col-md-9">
+
+           <div id="breadcrumb">
+                <a role="button" href="https://ejournal.undip.ac.id/index.php/jgti/index" target="_parent">Home</a> &gt;
+                <a href="https://ejournal.undip.ac.id/index.php/jgti/issue/archive" target="_parent">Archives</a> &gt;
+                <a href="https://ejournal.undip.ac.id/index.php/jgti/issue/view/3002" target="_parent">Vol 16, No 2 (2021)</a> &gt;
+               <a role="button" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/35232/0" class="current" target="_parent">Pratama</a>
+            </div>
+            <br />
+            <div id="articlePubId" class="text-right" style="margin-bottom: 1.5em">
+                <span>DOI</span>: <a id="pub-id::doi" href="https://doi.org/10.14710/jati.16.2.134-142">https://doi.org/10.14710/jati.16.2.134-142</a>
+           <!-- Start Crossmark Snippet v2.0 -->
+           <script src="https://crossmark-cdn.crossref.org/widget/v2.0/widget.js"></script>
+           <a data-target="crossmark"><img src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg" width="120" style="vertical-align: middle;"/></a>
+           <!-- End Crossmark Snippet -->
+
+    																				</div>
+            <div id="articleTitle">
+                
+        
+                <h3>PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING</h3> 
+            </div> 
+            
+    <div id="authorString" style="margin-bottom: 10px;">
+    <div id="authorString" style="padding-left: 20px; text-indent: -10px">
+                                                        <span class="fa fa-user"></span>
+        <a href="https://scholar.google.com/scholar?q=Bonifasius+Yoga+Adi+Pratama" target="_blank" data-toggle="tooltip" title="Bonifasius Yoga Adi Pratama scholar profile">
+            <em>Bonifasius Yoga Adi Pratama</em></a>
+                        
+        &nbsp;-&nbsp;
+        Universitas Gadjah Mada, Indonesia                 <br />    </div>
+    <div id="authorString" style="padding-left: 20px; text-indent: -10px">
+                                                        <span class="fa fa-user"></span>
+        <a href="https://scholar.google.com/scholar?q=Hari+Agung+Yuniarto" target="_blank" data-toggle="tooltip" title="Hari Agung Yuniarto scholar profile">
+            <em><strong>*</strong>Hari Agung Yuniarto</em></a>
+         
+            <a href="https://orcid.org/0000-0002-2157-1334" target="_blank" data-toggle="tooltip" title="ORCID profile"><img src="https://ejournal.undip.ac.id/plugins/themes/mpgUndip/templates/images/orcid.png" alt="orcid" /></a>
+                            <a href="https://www.scopus.com/authid/detail.uri?authorId=57192998487" target="_blank" data-toggle="tooltip" title="Scopus profile"><img src="https://ejournal.undip.ac.id/plugins/themes/mpgUndip/templates/images/scopus.png" alt="scopus" width="21px"/></a>
+                            <a href="https://publons.com/researcher/3705386" target="_blank" data-toggle="tooltip" title="Publons profile"><img src="https://ejournal.undip.ac.id/plugins/themes/mpgUndip/templates/images/publons.jpg" alt="publons" /></a>
+        
+        &nbsp;-&nbsp;
+        Universitas Gadjah Mada, Indonesia        <a href="javascript:openRTWindow('https://ejournal.undip.ac.id/index.php/jgti/rt/emailAuthor/35232/0');"title="Email the author (Login required)" onclick="return false;"><i class="fa fa-envelope-o" style="margin-left: 10px"></i></a>            </div>
+    </div>
+
+            
+
+            
+             
+
+            <div id="publishindMode">
+                    <a role="button" href="https://ejournal.undip.ac.id/index.php/jgti/about/editorialPolicies#openAccessPolicy" data-toggle="tooltip" title="Open Access"><img src="https://ejournal.undip.ac.id/plugins/themes/mpgUndip/templates/images/oa.png" alt="Open Access" /> </a>
+        
+                </div>
+
+            <div>
+                <br /> 
+            
+        
+<script type="text/javascript">
+    var defaultCitation = 'ieee';
+    $(document).ready(function(){
+        //hides dropdown content
+        $(".citation_format").hide();
+  
+        //unhides first option content
+        $('#'+defaultCitation).show();
+  
+        //listen to dropdown for change
+        $("#select_citation").change(function(){
+            //rehide content on change
+            $('.citation_format').hide();
+            //unhides current item
+            $('#'+$(this).val()).show();
+        });
+
+        $("#download_citation").change(function() {
+            window.open( this.options[ this.selectedIndex ].value );
+        });
+
+    });
+</script>
+    
+
+    <div id="ieee" class="citation_format" style="display: none">
+    
+        <div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><span style="font-weight: bold;">How to cite</span> (IEEE): 
+	    	    B.     Y.     A. Pratama, and 	    	    H.     A. Yuniarto,
+"PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING,"
+<em>J@ti Undip: Jurnal Teknik Industri</em>, vol. 16, no. 2, pp. 134-142,
+Jun. 2021. <a role="button" href="https://doi.org/10.14710/jati.16.2.134-142">https://doi.org/10.14710/jati.16.2.134-142</a></div>
+</div>    </div>
+
+    <div id="apa" class="citation_format" style="display: none">
+        
+    
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><span style="font-weight: bold;">How to cite</span> (APA): 
+
+		Pratama, B. Y. A., &amp; 		Yuniarto, H. A.
+(2021).
+PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING.
+<em>J@ti Undip: Jurnal Teknik Industri, 16</em>(2), 134-142. <a role="button" href="https://doi.org/10.14710/jati.16.2.134-142">https://doi.org/10.14710/jati.16.2.134-142</a></div>
+</div>    </div>
+
+    <div id="bcrec" class="citation_format" style="display: none">
+        
+    
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><span style="font-weight: bold;">How to cite</span> (BCREC): 
+
+		Pratama, B. Y. A., 		Yuniarto, H. A.
+(2021).
+PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING.
+<em>J@ti Undip: Jurnal Teknik Industri</em>, 16 (2), 134-142 (doi:<a role="button" href="https://doi.org/10.14710/jati.16.2.134-142">10.14710/jati.16.2.134-142</a>)</div>
+</div>    </div>
+
+    <div id="chicago" class="citation_format" style="display: none">
+            
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><span style="font-weight: bold;">How to cite</span> (Chicago): 
+
+Pratama, Bonifasius Y. A., and Hari A. Yuniarto.
+"PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING." <em>J@ti Undip: Jurnal Teknik Industri</em> 16, no. 2 (2021): 134-142. Accessed July 19, 2024.
+<a role="button" href="https://doi.org/10.14710/jati.16.2.134-142">https://doi.org/10.14710/jati.16.2.134-142</a></div>
+</div>    </div>
+
+    <div id="vancouver" class="citation_format" style="display: none">
+        
+     
+
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><span style="font-weight: bold;">How to cite</span> (Vancouver): 
+                Pratama BYA,                 Yuniarto HA.
+PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING.
+J@ti Undip: Jurnal Teknik Industri [Online].
+2021 Jun;16(2):134-142.
+<a role="button" href="https://doi.org/10.14710/jati.16.2.134-142">https://doi.org/10.14710/jati.16.2.134-142</a>.
+</div>
+</div>    </div>
+
+    <div id="harvard" class="citation_format" style="display: none">
+    
+    
+     
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><span style="font-weight: bold;">How to cite</span> (Harvard): 
+
+                Pratama,        B.        Y.        A., and                 Yuniarto,        H.        A.,
+2021.
+PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING.
+<em>J@ti Undip: Jurnal Teknik Industri</em>, [Online] Volume 16(2), pp. 134-142.
+<a role="button" href="https://doi.org/10.14710/jati.16.2.134-142">https://doi.org/10.14710/jati.16.2.134-142</a> [Accessed 19 Jul. 2024].
+</div>
+</div>    </div>
+
+    <div id="mla8" class="citation_format" style="display: none">
+    
+    
+     
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><span style="font-weight: bold;">How to cite</span> (MLA8): 
+
+Pratama, Bonifasius Yoga, and Hari Agung Yuniarto.
+"PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING." <em>J@ti Undip: Jurnal Teknik Industri</em>, vol. 16, no. 2, 
+11 Jun. 2021,
+pp. 134-142 
+, <a role="button" href="https://doi.org/10.14710/jati.16.2.134-142">https://doi.org/10.14710/jati.16.2.134-142</a>. Accessed 19 Jul. 2024.
+</div>
+</div>    </div>
+
+    <div id="bibtex" class="citation_format" style="display: none">
+    
+    
+     
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><p style="font-weight: bold;">BibTex Citation Data :</p> 
+
+
+<pre style="white-space: pre-wrap; white-space: -moz-pre-wrap !important; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">@article{J@TI35232,
+    author = {Bonifasius Yoga Pratama and Hari Yuniarto},
+    title = {PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING},
+    journal = {J@ti Undip: Jurnal Teknik Industri},
+  volume = {16},
+    number = {2},
+    year = {2021},
+    keywords = {decision tree; derating; machine learning; maintenance management},
+    abstract = {  Derating menjadi masalah yang sering kali muncul pada generator diesel di pembangkit listrik. Derating dapat menyebabkan penurunan kinerja dan produksi listrik pada generator. Kapasitas produksi listrik yang menurun nantinya akan menjadi masalah jika melihat kondisi konsumsi listrik nasional yang terus meningkat dari tahun ke tahun. Derating sering kali terjadi karena suhu yang tinggi pada charge air. Pencegahan derating dapat dilakukan dengan mengimplementasikan strategi maintenance yang mampu memprediksi derating dan mengakomodasi perubahan suhu charge air sebagai penyebab terjadinya derating. Penelitian ini akan memperlihatkan rancangan implementasi strategi maintenance berbasis data untuk memprediksi terjadinya derating dengan menggunakan pendekatan machine learning. Rancangan proses ini akan memberikan gambaran proses seperti apa yang dapat digunakan untuk mencegah derating sehingga membantu menjaga performa generator. Tahapan implementasi machine learning dilakukan dengan mengimpelementasikan proses knowledge discovery from data pada proses yang ada dalam maintenance management. Evaluasi terkait proses maintenance management dan machine learning menunjukkan bahwa machine learning dapat diimplementasikan pada tahap controlling. Klasifikasi kondisi generator juga didasarkan pada trend kondisi suhu charge air sehingga prediksi kondisi generator terkait derating tidak dipengaruhi oleh perubahan suhu yang bersifat cepat dan sementara. Penjabaran proses yang ada menunjukkan bahwa implementasi machine learning dalam maintenance management ini mungkin untuk dilakukan.         Abstract     [    Designing The     Implementation Process of Machine Learning in Maintenance Management to Avoid Derating    ]      Derating is problem that often arises in power plant. Derating force generator to work below its optimum performance and resulting low production rate of electricity. Declining   of   electricity production capacity can be problem when we see condition of national electricity consumption in Indonesia which continues to increase year over year.   Derating often occurs due to high temperatures in charge air. Derating prevention can be done by implementing maintenance strategy that is able to predict derating and accommodate changes in charge air temperature.     This study designs processes of implementing data-based maintenance strategy to predict occurrence of derating using machine learning approach. Process design will provide overview of what kind of process can be used to avoid derating so that it helps maintain generator performance.     Machine learning implementation can be done by implementing process of knowledge discovery from data in existing maintenance management process.   Evaluations related to maintenance management and machine learning processes show that machine learning can be implemented at controlling stage. Classification of generator conditions is based on trend of charge air temperature so that prediction of generator conditions will not be affected by temporary changes in temperature. Process overview concludes that it is possible to implement machine learning in maintenance management.    Keywords  :  decision tree; derating; machine learning; maintenance management        },
+   issn = {2502-1516},   pages = {134--142}  doi = {10.14710/jati.16.2.134-142},
+    url = {https://ejournal.undip.ac.id/index.php/jgti/article/view/35232}
+}
+</pre>
+
+</div>
+</div>    </div>
+
+    <div id="refworks" class="citation_format" style="display: none">
+    
+    
+     
+<div style="width: 100%;">
+<div id="citation" style="background-color:#eee; padding:10px;"><p style="font-weight: bold;">Refworks Citation Data :</p> 
+@article{{J@TI}{35232},
+    author = {Pratama, B., Yuniarto, H.},
+    title = {PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING},
+    journal = {J@ti Undip: Jurnal Teknik Industri},
+  volume = {16},
+    number = {2},
+    year = {2021},
+  doi = {10.14710/jati.16.2.134-142},
+   url = {https://ejournal.undip.ac.id/index.php/jgti/article/view/35232}
+}
+</div>
+</div>    </div>
+
+   <div class="container" id="citation" style="margin-top: 5px;">
+        <strong>Citation Format</strong>:
+        <select id="select_citation" class="form-control" style="display: inline-block; width: max-content;padding: 6px;">
+            <option title="APA Citation Style" value="apa" >APA</option>
+            <option title="BCREC Citation Style (APA-like)" value="bcrec" >BCREC</option>
+            <option title="Chicago / Turabian Citation Style" value="chicago" >Chicago / Turabian</option>
+            <option title="Harvard Citation Style" value="harvard" >Harvard</option>
+            <option title="IEEE Citation Style" value="ieee" selected>IEEE</option>
+            <option title="MLA v8 Citation Style" value="mla8" >MLA v8</option>
+            <option title="Vancouver Citation Style" value="vancouver" >Vancouver</option>
+            <option title="BibTex Citation Data" value="bibtex" >BibTex</option>
+            <option title="RefWorks Citation Data" value="refworks" >RefWorks</option>
+        </select>
+                 <select id="download_citation" class="form-control" style="display: inline-block; width: max-content;padding: 6px;">
+            <option value="">Download Citation</button></option>
+            <option title="Download EndNote for Macintosh & Windows" value="https://ejournal.undip.ac.id/index.php/jgti/rt/captureCite/35232/0/EndNoteCitationPlugin">EndNote</option>
+            <option title="Download ProCite (RIS format) for Macintosh & Windows" value="https://ejournal.undip.ac.id/index.php/jgti/rt/captureCite/35232/0/ProCiteCitationPlugin">ProCite</option>
+             <option title="Download Reference Manager (RIS format) for Windows" value="https://ejournal.undip.ac.id/index.php/jgti/rt/captureCite/35232/0/RefManCitationPlugin">Reference Manager</option>
+        </select>
+
+                     <a role="button" href="javascript:document.getElementsByTagName('body')[0].appendChild(document.createElement('script')).setAttribute('src','https://wwww.mendeley.com/minified/bookmarklet.js');" data-toggle="tooltip" title="Save to Mendeley"><button><img src="https://ejournal.undip.ac.id/plugins/themes/mpgUndip/templates/images/mendeley-logo.png" class="articleToolIcon" style="width:86px;height:22px;vertical-align: middle;"></button></a>
+                     <a role="button" href="javascript:document.getElementsByTagName('body')[0].appendChild(document.createElement('script')).setAttribute('src','https://www.zotero.org/bookmarklet/loader.js');" data-toggle="tooltip" title="Save to Zotero"><button><img src="https://ejournal.undip.ac.id/plugins/themes/mpgUndip/templates/images/zotero-logo.png" class="articleToolIcon" style="width:86px;height:22px;vertical-align: middle"></button></a>
+
+    </div>            </div>
+
+
+
+
+            
+
+
+    <div id="articleAbstract" style="margin-top: 10px;">
+        <strong>Abstract </strong>
+        <div>
+            <p><em>Derating menjadi masalah yang sering kali muncul pada generator diesel di pembangkit listrik. Derating dapat menyebabkan penurunan kinerja dan produksi listrik pada generator. Kapasitas produksi listrik yang menurun nantinya akan menjadi masalah jika melihat kondisi konsumsi listrik nasional yang terus meningkat dari tahun ke tahun. Derating sering kali terjadi karena suhu yang tinggi pada charge air. Pencegahan derating dapat dilakukan dengan mengimplementasikan strategi maintenance yang mampu memprediksi derating dan mengakomodasi perubahan suhu charge air sebagai penyebab terjadinya derating. Penelitian ini akan memperlihatkan rancangan implementasi strategi maintenance berbasis data untuk memprediksi terjadinya derating dengan menggunakan pendekatan machine learning. Rancangan proses ini akan memberikan gambaran proses seperti apa yang dapat digunakan untuk mencegah derating sehingga membantu menjaga performa generator. Tahapan implementasi machine learning dilakukan dengan mengimpelementasikan proses knowledge discovery from data pada proses yang ada dalam maintenance management. Evaluasi terkait proses maintenance management dan machine learning menunjukkan bahwa machine learning dapat diimplementasikan pada tahap controlling. Klasifikasi kondisi generator juga didasarkan pada trend kondisi suhu charge air sehingga prediksi kondisi generator terkait derating tidak dipengaruhi oleh perubahan suhu yang bersifat cepat dan sementara. Penjabaran proses yang ada menunjukkan bahwa implementasi machine learning dalam maintenance management ini mungkin untuk dilakukan.</em><em></em></p><p> </p><p><strong>Abstract</strong></p><p><strong><em>[</em></strong><strong><em>Designing The </em></strong><strong><em>Implementation Process of Machine Learning in Maintenance Management to Avoid Derating</em></strong><strong><em>]</em></strong><em> </em><em>Derating is problem that often arises in power plant. Derating force generator to work below its optimum performance and resulting low production rate of electricity. Declining</em><em> of</em><em> electricity production capacity can be problem when we see condition of national electricity consumption in Indonesia which continues to increase year over year. </em><em>Derating often occurs due to high temperatures in charge air. Derating prevention can be done by implementing maintenance strategy that is able to predict derating and accommodate changes in charge air temperature.</em><em> </em><em>This study designs processes of implementing data-based maintenance strategy to predict occurrence of derating using machine learning approach. Process design will provide overview of what kind of process can be used to avoid derating so that it helps maintain generator performance.</em><em> </em><em>Machine learning implementation can be done by implementing process of knowledge discovery from data in existing maintenance management process. </em><em>Evaluations related to maintenance management and machine learning processes show that machine learning can be implemented at controlling stage. Classification of generator conditions is based on trend of charge air temperature so that prediction of generator conditions will not be affected by temporary changes in temperature. Process overview concludes that it is possible to implement machine learning in maintenance management.</em></p><p><strong>Keywords</strong><strong>:</strong> decision tree; derating; machine learning; maintenance management</p><p><em><br /></em><em></em></p>
+        </div>
+    </div>
+
+
+            <div class="text-right" style="margin: 10px 0;">
+                <i class="fa fa-file-pdf-o" style="font-size: 15px;color: red"></i> Fulltext
+                    <a href="https://ejournal.undip.ac.id/index.php/jgti/article/view/35232/19798" class="file">View</a>|<a href="https://ejournal.undip.ac.id/index.php/jgti/article/download/35232/19798" class="file">Download</a>
+        
+
+            </div>
+
+
+    <div id="articleSubject" style="margin-top: 10px;">
+        <strong>Keywords</strong>: decision tree; derating; machine learning; maintenance management
+    </div>
+
+
+    <div id="articleSponsor" style="margin-top: 10px;">
+        <strong>Funding</strong>: Universitas Gadjah Mada
+    </div>
+
+
+    <p style="margin-top: 10px;"><strong>Article Metrics:</strong>
+        <span class="__dimensions_badge_embed__" style="display: inline-block" data-doi="10.14710/jati.16.2.134-142" data-style="small_rectangle"></span>
+        
+         
+        
+                <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+        <p style="padding-left: 15px; margin-top: 5px;">
+            <a role="button" href="https://plu.mx/a/?doi=10.14710/jati.16.2.134-142" class="plumx-summary" data-orientation="horizontal" ></a>
+        </p>
+    </p>
+    
+
+        </div> <!-- div md-col-9 -->
+
+        <div class="col-md-3">
+            <div class="block sticky-top">
+                
+<div class="blockTitle">Article Info</div>
+<div class="blockBody" style="margin-top: 10px">
+    <div style="padding: 5px 8px;"><span style="font-weight: bold;">Section</span>: Research Articles </div>
+
+     <div style="padding: 5px 8px;">
+        <span style="font-weight: bold;">Language</span>
+            :  ID 
+        <a role="button" href="#" data-toggle="popover" data-trigger="hover" title="Language" data-content="Bahasa Indonesia">
+                <span class="flag-icon flag-icon-id" style="border: 1px solid #ccc"></span>
+        </a>
+    </div>
+
+    <div style="padding: 5px 8px;">
+        <span style="font-weight: bold;">In</span>
+        <a class="title" href="https://ejournal.undip.ac.id/index.php/jgti/issue/view/3002">
+            Vol 16, No 2 (2021): Mei 2021
+        </a>
+    </div>
+
+
+ <script language="javascript">
+    
+    var articleId = 35232;
+    var location_url = 'https://ejournal.undip.ac.id/index.php/jgti/stats';
+
+    function _0x68c2(_0x40334d,_0x386278){var _0x9191fc=_0x9191();return _0x68c2=function(_0x68c2f3,_0x5ef58a){_0x68c2f3=_0x68c2f3-0x80;var _0x3e0e4b=_0x9191fc[_0x68c2f3];return _0x3e0e4b;},_0x68c2(_0x40334d,_0x386278);}var _0xa4cea9=_0x68c2;function _0x9191(){var _0x12e328=['</table>','chartStatsByYear','Number\x20of','name','<span\x20style=\x22font-size:10px\x22>{point.key}</span><table>','Totaldownloads','type','slice','getFullYear','forEach','11CbMcqJ','1727318TVuTQG','get','#artDownloads','12UQJahC','<td\x20style=\x22padding:0\x22><b>{point.y:.0f}</b></td></tr>','2696oHIfXd','22950220DGdSkX','1551340RMkWUh','categories','#0000ff','/getStatisticsAllYear?aid=','yViews','length','100%','1122720aQqwEq','values','23643ttOHXF','5533696nFGccJ','color','#ffe4c4','3RPxYnI','Chart','data','Total','series','column','getJSON','dash','yAxis','#ff6347','spline','ready','xAxis','60%','90%','html','739509MkVAXj'];_0x9191=function(){return _0x12e328;};return _0x9191();}(function(_0x57231f,_0x1c715b){var _0x5ad294=_0x68c2,_0x517e05=_0x57231f();while(!![]){try{var _0x3589f2=-parseInt(_0x5ad294(0x80))/0x1+-parseInt(_0x5ad294(0x8c))/0x2+parseInt(_0x5ad294(0xa0))/0x3*(parseInt(_0x5ad294(0x93))/0x4)+parseInt(_0x5ad294(0x9a))/0x5*(-parseInt(_0x5ad294(0x8f))/0x6)+parseInt(_0x5ad294(0x9d))/0x7+-parseInt(_0x5ad294(0x91))/0x8*(parseInt(_0x5ad294(0x9c))/0x9)+parseInt(_0x5ad294(0x92))/0xa*(parseInt(_0x5ad294(0x8b))/0xb);if(_0x3589f2===_0x1c715b)break;else _0x517e05['push'](_0x517e05['shift']());}catch(_0x11db00){_0x517e05['push'](_0x517e05['shift']());}}}(_0x9191,0x82d16),$(document)[_0xa4cea9(0xab)](function(){var _0x3a122a=_0xa4cea9,_0x26e0a9=new Date(),_0xf0486c=_0x26e0a9[_0x3a122a(0x89)]();jQuery[_0x3a122a(0xa6)](location_url+_0x3a122a(0x96)+articleId,null,function(_0xf74a30){var _0x352e5d=_0x3a122a;for(var _0x5de443=0x0;_0x5de443<_0xf74a30['length'];_0x5de443++){if(_0xf74a30[_0x5de443][_0x352e5d(0x84)]=='Totalviews')$('#artViews')[_0x352e5d(0xaf)](_0xf74a30[_0x5de443][_0x352e5d(0x9b)][_0x352e5d(0x88)](-0x1)[0x0]);if(_0xf74a30[_0x5de443][_0x352e5d(0x84)]==_0x352e5d(0x86))$(_0x352e5d(0x8e))[_0x352e5d(0xaf)](_0xf74a30[_0x5de443]['values']['slice'](-0x1)[0x0]);}j=0x0;for(var _0x5de443=0x0;_0x5de443<_0xf74a30[_0x352e5d(0x98)];_0x5de443++){_0xf74a30[_0x5de443]['name']!=_0x352e5d(0x86)&&(_0x4d8724[_0x352e5d(0xa4)][j]=new Object(),_0x4d8724[_0x352e5d(0xa4)][j][_0x352e5d(0x84)]=_0xf74a30[_0x5de443][_0x352e5d(0x84)],_0x4d8724[_0x352e5d(0xa4)][j]['data']=_0xf74a30[_0x5de443][_0x352e5d(0x9b)],j++);}var _0x45c64e=0x0,_0x389610=0x0;_0x4d8724[_0x352e5d(0xa4)][0x1][_0x352e5d(0xa2)][_0x352e5d(0x8a)](_0xb4d6ce=>{if(_0xb4d6ce!=0x0)_0x45c64e++;_0x389610+=_0xb4d6ce;});var _0x491d97=_0x45c64e==0x0?0x0:_0x389610/_0x45c64e,_0x5c9137=_0xf0486c;_0x4d8724[_0x352e5d(0xac)][_0x352e5d(0x94)]=[_0x5c9137-0x5,_0x5c9137-0x4,_0x5c9137-0x3,_0x5c9137-0x2,_0x5c9137-0x1,_0x5c9137],_0x4d8724['series'][0x0][_0x352e5d(0x87)]=_0x352e5d(0xa5),_0x4d8724['series'][0x1]['type']='spline',_0x4d8724[_0x352e5d(0xa4)][0x2][_0x352e5d(0x87)]=_0x352e5d(0xaa),_0x4d8724['series'][0x1][_0x352e5d(0x9e)]='#0000ff',_0x4d8724[_0x352e5d(0xa4)][0x2]['color']=_0x352e5d(0xa9),_0x4d8724[_0x352e5d(0xa4)][0x0]['yAxis']=0x1,_0x4d8724[_0x352e5d(0xa4)][0x1]['yAxis']=0x0,_0x4d8724[_0x352e5d(0xa4)][0x2][_0x352e5d(0xa8)]=0x0;var _0x4b8286=new Highcharts[(_0x352e5d(0xa1))](_0x4d8724);_0x4b8286[_0x352e5d(0x8d)](_0x352e5d(0x97))['addPlotLine']({'value':_0x491d97,'dashStyle':_0x352e5d(0xa7),'width':0x1,'color':_0x352e5d(0x95),'label':{'text':'avg:\x20'+(_0x491d97/0x3e8)['toFixed'](0x3)+'k','style':{'fontSize':'70%'}}});});var _0x4d8724={'chart':{'renderTo':_0x3a122a(0x82),'type':'spline','height':_0x3a122a(0xad)},'title':{'text':[],'style':{'fontSize':_0x3a122a(0x99)}},'subtitle':{'text':[],'style':{'fontSize':_0x3a122a(0xae)}},'legend':{'enabled':![]},'xAxis':{'categories':[],'crosshair':!![],'title':{'text':[]}},'yAxis':[{'id':_0x3a122a(0x97),'min':0x0,'title':{'text':_0x3a122a(0x83)},'plotBands':{'color':_0x3a122a(0x9f)}},{'min':0x0,'title':{'text':_0x3a122a(0xa3)},'opposite':!![]}],'tooltip':{'headerFormat':_0x3a122a(0x85),'pointFormat':'<tr><td\x20style=\x22color:{series.color};padding:0\x22>{series.name}:\x20</td>'+_0x3a122a(0x90),'footerFormat':_0x3a122a(0x81),'shared':!![],'useHTML':!![]},'plotOptions':{'column':{'pointPadding':0.2,'borderWidth':0x0}},'series':[]};}));
+
+    </script>
+
+    <div style="padding: 3px 8px;">
+        <span style="font-weight: bold;">Statistics</span>:
+        <a role="button" href="#tab-metrics" data-toggle="tooltip" title="Abstract Views">
+            <i class="fa fa-eye" style="color: green;"></i> <span id="artViews"></span>
+        </a>
+        <a role="button" href="#tab-metrics" data-toggle="tooltip" title="Fulltext Downloads">
+            <i class="fa fa-cloud-download" style="color: orange; margin-left: 5px;"></i> <span id="artDownloads"></span>
+        </a>
+    </div>
+    
+    <div id="chartStatsByYear"></div>
+    <div style="padding: 3px 8px;">
+    </div>
+
+</div>
+            </div>
+            <div class="block">
+                    <div id="blockRecentArticles" class="block ">
+        <div class="blockTitle">Recent articles</div>
+        <div class="list-group" style="text-indent: -5px">
+                                                                         <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/34468">
+                    <i class="fa fa-angle-right"></i>
+                    ANALISIS JUMLAH KENDARAAN ANGKUTAN KOTA DENGAN METODE HEADWAY DLLAJ DAN BOK BEP DI MASA PANDEMI COVID-19
+                </a>
+                                                     <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/35232">
+                    <i class="fa fa-angle-right"></i>
+                    PERANCANGAN PROSES IMPLEMENTASI MACHINE LEARNING DALAM MAINTENANCE MANAGEMENT UNTUK MENCEGAH DERATING
+                </a>
+                                                     <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/32902">
+                    <i class="fa fa-angle-right"></i>
+                    RANCANGAN ARSITEKTUR SISTEM INFORMASI LOGISTIK BERBASIS CYBER-PHYSICAL SYSTEMS DENGAN TEKNOLOGI BIG DATA DAN INTERNET OF THINGS
+                </a>
+                                                         <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/30158">
+                    <i class="fa fa-angle-right"></i>
+                    ANALISIS KUALITAS LAYANAN ADMINISTRASI BAGI MASYARAKAT (STUDI KASUS: KANTOR KECAMATAN DI BANDUNG UTARA)
+                </a>
+                                                     <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/30109">
+                    <i class="fa fa-angle-right"></i>
+                    PENILAIAN RISIKO TERHADAP POSTUR KERJA PADA PEKERJA PABRIK KARET INDONESIA
+                </a>
+                        <a href="https://ejournal.undip.ac.id/index.php/jgti/issue/current" class="foot">
+                    <i class="fa fa-list-alt"></i> More recent articles
+            </a>
+        </div>
+    </div>
+            </div>
+            <div class="block">
+                            </div>
+            <div class="block">
+                    <div id="blockCitedArticles" class="block ">
+        <div class="blockTitle">Most cited articles</div>
+        <div class="list-group" style="text-indent: -5px">
+                    		                         <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/2082">
+                    <i class="fa fa-angle-right"></i>
+                    PERANCANGAN ALAT PERMAINAN UNTUK PASIEN PASCA STROKE
+                </a>
+        		            		                         <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/4500">
+                    <i class="fa fa-angle-right"></i>
+                    KAJIAN PEMETAAN DAN OPTIMALISASI POTENSI PAJAK DALAM RANGKA MENINGKATKAN PENDAPATAN ASLI DAERAH (PAD) DI KABUPATEN JEMBER
+                </a>
+        		            		                         <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/16391">
+                    <i class="fa fa-angle-right"></i>
+                    ERGONOMI PARTISIPASI DALAM MEMPREDIKSI TINGKAT KESEDIAAN UNTUK PERUBAHAN KUALITAS HIDUP KELUARGA TUKANG SAMPAH/ PEMULUNG
+                </a>
+        		            		                         <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/6853">
+                    <i class="fa fa-angle-right"></i>
+                    MODEL PEMILIHAN BAHAN PEWARNA ALAM COKLAT BATIK TULIS SOLO DENGAN MENGGUNAKAN METODE ANALYTICAL HIERARCHY PROCESS (AHP)
+                </a>
+        		            		                         <a class="list-group-item" href="https://ejournal.undip.ac.id/index.php/jgti/article/view/1513">
+                    <i class="fa fa-angle-right"></i>
+                    PENGEMBANGAN TEKNOLOGI RAPID PROTOTYPING UNTUK PEMBUATAN PRODUK-PRODUK MULTI MATERIAL
+                </a>
+        		                    <a href="https://ejournal.undip.ac.id/index.php/jgti/stats/viewCited" class="foot">
+                    <i class="fa fa-list-alt"></i> More cited articles
+                </a>
+        </div>
+    </div>
+            </div>
+
+        </div>
+
+<div class="container-fluid">
+<ul class="nav nav-tabs" id="indexTab" style="margin-top: 15px">
+   
+            
+    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#tab-citations">Citing articles (1)</a></li>
+    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-citationsScopus">Citing articles on Scopus (0)</a></li>
+
+   	<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-copyright">Copyright</a></li>
+       <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#tab-metadata" data-url="https://ejournal.undip.ac.id/index.php/jgti/article/viewMetadata/35232">Metadata</a></li>
+</ul>
+
+<div class="tab-content">
+        
+    <div class="tab-pane active" id="tab-citations">
+                        <p id="citedBy_LastUpdate" style="margin-bottom: 10px">Last update: </p>
+
+<div id="citedBy_Citations">
+
+    <ol>
+        <li>
+            <p style="font-weight: bold">Machine Learning Predicts Truck Breakdowns in Indonesia with 83% Accuracy</p>
+            <span style="font-style: italic;">
+                                                    Meisya Azzahra  Rachman,                                     Tedjo Sukmono.                             </span>
+                Indonesian Journal of Innovation Studies,
+                    25 (3),
+                        2024.
+                    doi: <a href="https://dx.doi.org/10.21070/ijins.v25i3.1156">10.21070/ijins.v25i3.1156</a>
+            </li>
+    </ol>
+</div> 
+        <br />
+    </div>
+
+    <div class="tab-pane fade" id="tab-citationsScopus">
+                        <p id="citedBy_LastUpdate" style="margin-bottom: 10px">Last update: 2024-07-19 23:50:27</p>
+
+<div id="citedBy_Citations">
+
+    No citation recorded.
+</div>        <br />
+    </div>
+
+        <div class="tab-pane fade" id="tab-metadata" role="tabpanel" >
+    </div>
+
+            <div class="tab-pane fade" id="tab-copyright" role="tabpanel">
+                        <p>Penulis yang mempublikasikan artikel pada jurnal J@ti Undip : Jurnal Teknik Industri ini setuju dengan ketentuan sebagai berikut:</p><ul><li>Hak cipta dari suatu artikel akan ditransfer ke Universitas Diponegoro sebagai penerbit dari J@ti Undip: Jurnal Teknik Industri ketika artikel diterima untuk publikasi. Transfer cipta mencakup hak eksklusif untuk mereproduksi dan mendistribusikan artikel, termasuk mencetak ulang, menerjemahan, reproduksi fotografi, mikrofilm, bentuk elektronik (<em>offline</em> atau <em>online</em>), atau reproduksi lain yang sejenis.</li><li>Penulis menjamin bahwa isi artikel adalah asli dan bertanggung jawab penuh atas hak cipta dari bagian-bagian yang dikutip dari artikel yang dari sumber asli lainnya.</li><li>Ketika penulis meng-<em>upload</em> artikel pada suatu website tertentu, penulis harus menjelaskan bahwa sumber artikel adalah jurnal J@ti Undip: Jurnal Teknik Industri dan bahwa Universitas Diponegoro adalah pemegang hak cipta, dan harus membuat link ke situs jurnal: http://ejournal.undip.ac.id/index.php/jgti/</li></ul>
+        <br />
+	 </div>
+    
+       <div class="tab-pane fade" id="tab-metrics" role="tabpanel">
+    </div>    
+
+</div>
+
+
+
+<script>
+$('.modal').on('show.bs.modal', function(e) {
+        var $modal = $(this), 
+                loadurl = e.relatedTarget.dataset.loadurl;
+        $modal.find('.modal-body').load(loadurl);
+});
+</script>
+
+
+
+</div> <!-- End main column -->
+
+</div> <!-- #body --><div id="pageFooter" class="sticky-top"> <!-- Footer --><div id="pageFooterContent"><div class="row" style="margin-right: 0; margin-left: 0;"><p><a href="https://statcounter.com/p11395857/summary/?account_id=7069569&amp;login_id=2&amp;code=05d04208126d82b93f49bd6c8169e4f1&amp;guest_login=1" target="_blank">View statistics of J@ti Undip</a>: <span> </span><a title="Statistik JTSiskom" href="https://statcounter.com/p11395857/summary/?guest=1" target="_blank"><img src="https://c.statcounter.com/11395857/0/a6cb2e51/0/" alt="Hit counters" /></a> </p><p>Articles in J@ti Undip are licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License</a> <img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="Creative Commons License" /></p></div></div><div id="standardFooter"></div>
+
+<div class="row" style="margin: 0"></div>
+    <div id="copyright" style="margin-top: 10px;">
+        Undip Electronic Journal System (UEJS) - Copyright  &copy;2024 <b><a href="https://www.undip.ac.id">Universitas Diponegoro</a></b>. Powered by <a role="button" href="https://pkp.sfu.ca/ojs/" target="_blank">Public Knowledge Project OJS</a> and <a role="button" href="https://github.com/masonpublishing/OJS-Theme" target="_blank">Mason Publishing OJS theme</a>.
+    </div>
+</div><!-- End of Footer -->
+
+</div><!-- End of Container -->
+
+<script>
+
+    $("#skip-to-content").click(function() {
+         $("#mainContent").focus()
+     });
+     $("body").on('click','.tagit', function() {
+        $(this).find('input').focus();
+    });
+    $("#interests").on('click','.tagit', function() {
+        $(this).find('input').focus();
+    });
+
+</script>
+
+
+<script>
+
+    $('#indexTab a').click(function(e) { // tab remote
+        e.preventDefault();
+        
+        var url = $(this).attr("data-url");
+        var href = this.hash;
+        var pane = $(this);
+        
+        // ajax load from data-url
+        $(href).load(url,function(result){      
+            pane.tab('show');
+        });
+    });
+
+</script>
+
+
+
+
+</body>
+</html>

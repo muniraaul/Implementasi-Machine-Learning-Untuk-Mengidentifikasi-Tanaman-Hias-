@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en-US" xml:lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		IMPLEMENTASI DEEP LEARNING FLOWER SCANNER MENGGUNAKAN METODE CONVOLUTIONAL NEURAL NETWORK
+							| Sebatik
+			</title>
+
+	
+<link rel="icon" href="https://jurnal.wicida.ac.id/public/journals/1/favicon_en_US.png">
+<meta name="generator" content="Open Journal Systems 3.3.0.14">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Hanissa Anggraini Pratiwi"/>
+<meta name="DC.Creator.PersonalName" content="Margi Cahyanti"/>
+<meta name="DC.Creator.PersonalName" content="Missa Lamsani"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2021-06-01"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2021-04-16"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2021-06-01"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2021-07-13"/>
+<meta name="DC.Description" xml:lang="en" content="Bunga atau kembang adalah alat reproduksi seksual pada tumbuhan berbunga. Pada bunga terdapat organ reproduksi, yaitu benang sari dan putik. Pada beberapa spesies, bunga majemuk dapat dianggap awam sebagai bunga (tunggal), ada sekitar 391.000 spesies tanaman vaskular yang saat ini diketahui sains, dimana sekitar 369.000 spesies (atau 94 persen) adalah tanaman berbunga. Klasifikasi jenis bunga merupakan pekerjaan yang membutuhkan waktu dan pengetahuan. Perkembangan visi komputer memungkinkan otomatisasi klasifikasi jenis bunga dengan efisien dan akurat. Deep Learning merupakan cabang ilmu machine learning berbasis Jaringan Saraf Tiruan (JST) atau bisa dikatakan sebagai perkembangan dari JST. Dalam Deep Learning, sebuah komputer belajar mengklasifikasi secara langsung dari gambar atau suara. Dengan menggunakan teknologi Deep Learning yang merupakan salah satu bidang ilmu baru dalam Machine learning dan berkembang dengan sangat pesat. Deep Learning memiliki kemampuan yang baik dalam Computer Vision, yaitu Image Classification atau kalsifikasi objek pada citra dalam bentuk dua dimensi misalnya gambar dan suara. Hasil final test accuracy yang diperoleh yaitu didapat keakuratan sebesar 100% dengan salah satu hasil pengujian yaitu klasifikasi bunga mawar&amp;nbsp; dengan akurasi sebesar 99,30%. Model data latih menggunakan dengan total dataset 460 gambar (yang diambil melalui pencarian gambar pada Google Image) sebanyak 30 kali dilatih, di mana setiap 13 langkah terhitung 1 training. Sehingga menghasilkan keluaran nilai akurasi dari data yang telah dilatih (val_acc) dan nilai akurasi dari data yang hilang atau miss (val_loss). Diharapkan dengan adanya implementasi aplikasi ini dapat membantu pengguna untuk memelihara bunga hias dengan jenis sesuai dengan keinginan."/>
+<meta name="DC.Format" scheme="IMT" content="inode/x-empty"/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Identifier" content="1297"/>
+<meta name="DC.Identifier.pageNumber" content="124-130"/>
+<meta name="DC.Identifier.DOI" content="10.46984/sebatik.v25i1.1297"/>
+<meta name="DC.Identifier.URI" content="https://jurnal.wicida.ac.id/index.php/sebatik/article/view/1297"/>
+<meta name="DC.Language" scheme="ISO639-1" content="en"/>
+<meta name="DC.Rights" content="Copyright (c) 2021 Sebatik"/>
+<meta name="DC.Rights" content=""/>
+<meta name="DC.Source" content="Sebatik"/>
+<meta name="DC.Source.ISSN" content="2621-069X"/>
+<meta name="DC.Source.Issue" content="1"/>
+<meta name="DC.Source.Volume" content="25"/>
+<meta name="DC.Source.URI" content="https://jurnal.wicida.ac.id/index.php/sebatik"/>
+<meta name="DC.Subject" xml:lang="en" content="Bunga, CNN, Deep Learning, Neural Network, Klasifikasi"/>
+<meta name="DC.Title" content="IMPLEMENTASI DEEP LEARNING FLOWER SCANNER MENGGUNAKAN METODE CONVOLUTIONAL NEURAL NETWORK"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Articles"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="Sebatik"/>
+<meta name="citation_journal_abbrev" content="Sebatik"/>
+<meta name="citation_issn" content="2621-069X"/> 
+<meta name="citation_author" content="Hanissa Anggraini Pratiwi"/>
+<meta name="citation_author_institution" content="Teknik Informatika, Fakultas Teknologi Industri, Universitas Gunadarma."/>
+<meta name="citation_author" content="Margi Cahyanti"/>
+<meta name="citation_author_institution" content="Sistem Informasi, Fakultas Ilmu Komputer dan Teknologi Informasi, Universitas Gunadarma."/>
+<meta name="citation_author" content="Missa Lamsani"/>
+<meta name="citation_author_institution" content="Sistem Komputer, Fakultas Ilmu Komputer dan Teknologi Informasi, Universitas Gunadarma."/>
+<meta name="citation_title" content="IMPLEMENTASI DEEP LEARNING FLOWER SCANNER MENGGUNAKAN METODE CONVOLUTIONAL NEURAL NETWORK"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_date" content="2021/06/01"/>
+<meta name="citation_volume" content="25"/>
+<meta name="citation_issue" content="1"/>
+<meta name="citation_firstpage" content="124"/>
+<meta name="citation_lastpage" content="130"/>
+<meta name="citation_doi" content="10.46984/sebatik.v25i1.1297"/>
+<meta name="citation_abstract_html_url" content="https://jurnal.wicida.ac.id/index.php/sebatik/article/view/1297"/>
+<meta name="citation_keywords" xml:lang="en" content="Bunga, CNN, Deep Learning, Neural Network, Klasifikasi"/>
+<meta name="citation_pdf_url" content="https://jurnal.wicida.ac.id/index.php/sebatik/article/download/1297/416"/>
+	<link rel="stylesheet" href="https://jurnal.wicida.ac.id/index.php/sebatik/$$$call$$$/page/page/css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="https://jurnal.wicida.ac.id/lib/pkp/styles/fontawesome/fontawesome.css?v=3.3.0.14" type="text/css" /><link rel="stylesheet" href="https://jurnal.wicida.ac.id/public/journals/1/styleSheet.css?d=" type="text/css" />
+</head>
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<div class="pkp_structure_page">
+
+				<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
+						 <nav class="cmp_skip_to_content" aria-label="Jump to content links">
+	<a href="#pkp_content_main">Skip to main content</a>
+	<a href="#siteNav">Skip to main navigation menu</a>
+		<a href="#pkp_content_footer">Skip to site footer</a>
+</nav>
+
+			<div class="pkp_head_wrapper">
+
+				<div class="pkp_site_name_wrapper">
+					<button class="pkp_site_nav_toggle">
+						<span>Open Menu</span>
+					</button>
+										<div class="pkp_site_name">
+																<a href="						https://jurnal.wicida.ac.id/index.php/sebatik/index
+					" class="is_img">
+							<img src="https://jurnal.wicida.ac.id/public/journals/1/pageHeaderLogoImage_en_US.png" width="1755" height="193" alt="SEBATIK" />
+						</a>
+										</div>
+				</div>
+
+				
+				<nav class="pkp_site_nav_menu" aria-label="Site Navigation">
+					<a id="siteNav"></a>
+					<div class="pkp_navigation_primary_row">
+						<div class="pkp_navigation_primary_wrapper">
+																				<ul id="navigationPrimary" class="pkp_navigation_primary pkp_nav_list">
+								<li class="">
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik">
+					<i class="fa fa-home"> </i> Home
+				</a>
+							</li>
+								<li class="">
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik/index">
+					<i class="fa fa-archive" aria-hidden="true"></i> Contents
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/issue/current">
+										Current
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/issue/view/44">
+										Upcoming Issue
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/issue/archive">
+										Archives
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik/index">
+					<i class="fa fa-bell-o" aria-hidden="true"></i> Policies
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about">
+										Publication Ethics
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about#h54skcvys4ju1vhd3o7qxmmz01h6bhw3">
+										Open Access Policy
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about#h49skcvyhg1cgwohgb661cqabk1zl6">
+										Copyright Notice
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik/index">
+					<i class="fa fa-pencil"> </i> Submissions
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about#h15skcvxgqy5r25yui17y8ue6t55n0c">
+										Focus & Scope
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about#h38skcvy2pkg1usi74k1fh1qnr4dj4wh">
+										Submission & Publication Charges
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about#h51skcvypiydz25lnbo3q6naubikn4">
+										Peer Review Process
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about/submissions#h3skcvxtath17rot541ijz9fh1kvce6q">
+										Author Guidelines
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about/submissions">
+										Make a Submissions
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik/index">
+					<i class="fa fa-info-circle" aria-hidden="true"></i>  About
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about">
+										About the Journal
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about#h8skcw06fhxwsee7bfnkpkh17rqrmy">
+										Archiving
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about/editorialTeam">
+										Editorial Team
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/reviewer">
+										Reviewer
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about/contact">
+										Contact
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://jurnal.wicida.ac.id/index.php/snsebatik2023">
+					⏪  Go to [SN-SEBATIK 2023]
+				</a>
+							</li>
+			</ul>
+
+				
+
+																						<div class="pkp_navigation_search_wrapper">
+									<a href="https://jurnal.wicida.ac.id/index.php/sebatik/search" class="pkp_search pkp_search_desktop">
+										<span class="fa fa-search" aria-hidden="true"></span>
+										Search
+									</a>
+								</div>
+													</div>
+					</div>
+					<div class="pkp_navigation_user_wrapper" id="navigationUserWrapper">
+							<ul id="navigationUser" class="pkp_navigation_user pkp_nav_list">
+								<li class="profile">
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik/user/register">
+					Register
+				</a>
+							</li>
+								<li class="profile">
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik/login">
+					Login
+				</a>
+							</li>
+										</ul>
+
+					</div>
+				</nav>
+			</div><!-- .pkp_head_wrapper -->
+		</header><!-- .pkp_structure_head -->
+
+						<div class="pkp_structure_content has_sidebar">
+			<div class="pkp_structure_main" role="main">
+				<a id="pkp_content_main"></a>
+
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="You are here:">
+	<ol>
+		<li>
+			<a href="https://jurnal.wicida.ac.id/index.php/sebatik/index">
+				Home
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="https://jurnal.wicida.ac.id/index.php/sebatik/issue/archive">
+				Archives
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="https://jurnal.wicida.ac.id/index.php/sebatik/issue/view/32">
+					Vol. 25 No. 1 (2021): Juni 2021
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Articles
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		  	 <article class="obj_article_details">
+
+		
+	<h1 class="page_title">
+		IMPLEMENTASI DEEP LEARNING FLOWER SCANNER MENGGUNAKAN METODE CONVOLUTIONAL NEURAL NETWORK
+	</h1>
+
+	
+	<div class="row">
+		<div class="main_entry">
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Authors</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Hanissa Anggraini Pratiwi
+							</span>
+															<span class="affiliation">
+									Teknik Informatika, Fakultas Teknologi Industri, Universitas Gunadarma.
+																	</span>
+																						<span class="orcid">
+									
+									<a href="http://orcid.org/0000-0001-5670-841X" target="_blank">
+										http://orcid.org/0000-0001-5670-841X
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Margi Cahyanti
+							</span>
+															<span class="affiliation">
+									Sistem Informasi, Fakultas Ilmu Komputer dan Teknologi Informasi, Universitas Gunadarma.
+																	</span>
+																						<span class="orcid">
+									
+									<a href="http://orcid.org/0000-0002-4939-3808" target="_blank">
+										http://orcid.org/0000-0002-4939-3808
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Missa Lamsani
+							</span>
+															<span class="affiliation">
+									Sistem Komputer, Fakultas Ilmu Komputer dan Teknologi Informasi, Universitas Gunadarma.
+																	</span>
+																						<span class="orcid">
+									
+									<a href="http://orcid.org/0000-0002-6948-4192" target="_blank">
+										http://orcid.org/0000-0002-6948-4192
+									</a>
+								</span>
+													</li>
+										</ul>
+				</section>
+			
+																												<section class="item doi">
+						<h2 class="label">
+														DOI:
+						</h2>
+						<span class="value">
+							<a href="https://doi.org/10.46984/sebatik.v25i1.1297">
+								https://doi.org/10.46984/sebatik.v25i1.1297
+							</a>
+						</span>
+					</section>
+							
+									<section class="item keywords">
+				<h2 class="label">
+										Keywords:
+				</h2>
+				<span class="value">
+											Bunga, CNN, Deep Learning, Neural Network, Klasifikasi									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h2 class="label">Abstract</h2>
+					<p>Bunga atau kembang adalah alat reproduksi seksual pada tumbuhan berbunga. Pada bunga terdapat organ reproduksi, yaitu benang sari dan putik. Pada beberapa <em>spesies</em>, bunga majemuk dapat dianggap awam sebagai bunga (tunggal), ada sekitar 391.000 spesies tanaman vaskular yang saat ini diketahui sains, dimana sekitar 369.000 spesies (atau 94 persen) adalah tanaman berbunga. Klasifikasi jenis bunga merupakan pekerjaan yang membutuhkan waktu dan pengetahuan. Perkembangan visi komputer memungkinkan otomatisasi klasifikasi jenis bunga dengan efisien dan akurat. <em>Deep Learning</em> merupakan cabang ilmu <em>machine learning</em> berbasis Jaringan Saraf Tiruan (JST) atau bisa dikatakan sebagai perkembangan dari JST. Dalam <em>Deep Learning</em>, sebuah komputer belajar mengklasifikasi secara langsung dari gambar atau suara. Dengan menggunakan teknologi <em>Deep Learning</em> yang merupakan salah satu bidang ilmu baru dalam <em>Machine learning </em>dan berkembang dengan sangat pesat. <em>Deep Learning</em> memiliki kemampuan yang baik dalam <em>Computer Vision</em>, yaitu <em>Image Classification</em> atau kalsifikasi objek pada citra dalam bentuk dua dimensi misalnya gambar dan suara. Hasil final <em>test accuracy</em> yang diperoleh yaitu didapat keakuratan sebesar 100% dengan salah satu hasil pengujian yaitu klasifikasi bunga mawar  dengan akurasi sebesar 99,30%. Model data latih menggunakan dengan total <em>dataset</em> 460 gambar (yang diambil melalui pencarian gambar pada <em>Google Image</em>) sebanyak 30 kali dilatih, di mana setiap 13 langkah terhitung 1 training. Sehingga menghasilkan keluaran nilai akurasi dari data yang telah dilatih (<em>val_acc</em>) dan nilai akurasi dari data yang hilang atau <em>miss</em> (<em>val_loss</em>). Diharapkan dengan adanya implementasi aplikasi ini dapat membantu pengguna untuk memelihara bunga hias dengan jenis sesuai dengan keinginan.</p>
+				</section>
+			
+			
+
+																																	
+										<section class="item references">
+					<h2 class="label">
+						References
+					</h2>
+					<div class="value">
+													Apriani, L. D., Susetyarini, E., &amp; Wahyuni, S. 2017. Ultrastruktur Pollen Anggrek Genus Dendrobium Sebagai Sumber Belajar Biologi. Jurnal Pendidikan Biologi Indonesia, 2(3), 148-257. Azizah, L. M., Umayah, S. F., &amp; Fajar, F. 2018. Deteksi Kecacatan Permukaan Buah Manggis Menggunakan Metode Deep Learning dengan Konvolusi Multilayer. Semesta Teknika, 21(2), 230-236. <br />
+Batubara, N. A., &amp; Awangga, R. M. 2020. TUTORIAL Object Detection Plate Number With Convolution Neural Network (Cnn) (Vol. 1). Kreatif.<br />
+Darmanto, H. 2019. Pengenalan Spesies Ikan Berdasarkan Kontur Otolith Menggunakan Convolutional Neural Network. Joined Journal (Journal of Informatics Education), 2(1), 41-59.<br />
+Endrianti, F., Setiawan, W., &amp; Wihardi, Y. 2018. Sistem Pencatatan Kehadiran Otomatis di Ruang Kelas Berbasis Pengenalan Wajah Menggunakan Metode Convolutional Neural Network (CNN). JATIKOM: Jurnal Aplikasi dan Teori Ilmu Komputer, 1(1), 40-44.<br />
+Ilahiyah, S., &amp; Nilogiri, A. 2018. Implementasi Deep Learning Pada Identifikasi Jenis Tumbuhan Berdasarkan Citra Daun Menggunakan Convolutional Neural Network. JUSTINDO (Jurnal Sistem Dan Teknologi Informasi Indonesia), 3(2), 49-56.<br />
+Multazam, S., Cholissodin, I., &amp; Adinugroho, S. 2020. Implementasi Metode Extreme Learning Machine pada Klasifikasi Jenis Penyakit Hepatitis berdasarkan Faktor Gejala. Jurnal Pengembangan Teknologi Informasi dan Ilmu Komputer e-ISSN, 2548, 964X.<br />
+Nakahara, H., Fujii, T., &amp; Sato, S. 2017. A Fully Connected layer elimination for a binarizec Convolutional Neural Network on an FPGA. In 2017 27th International Conference on Field Programmable Logic and Applications (FPL) (pp. 1-4). IEEE.<br />
+Nurhikmat, T. 2018. Implementasi Deep Learning Untuk Image Classification Menggunakan Algoritma Convolutional Neural Network (CNN) Pada Citra Wayang Golek.<br />
+Paliwang, A. A. A., Septian, M. R. D., Cahyanti, M., &amp; Swedia, E. R. 2020. Klasifikasi Penyakit Tanaman Apel Dari Citra Daun Dengan Convolutional Neural Network. Sebatik, 24(2), 207-212.<br />
+Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. nature, 323(6088), 533-536.<br />
+Sena, S. 2017. Pengenalan Deep Learning Part 1 : Neural Network. https://medium.com/@samuelsena/pengenalan-deep-learning-8fbb7d8028ac (diakses pada tanggal 5 Januari 2021).<br />
+Sofia, N. 2018. Convolutional Neural Network. https://medium.com/@nadhifasofia/1-convolutional-neural-network-convolutional-neural-network-merupakan-salah-satu-metode-machine-28189e17335b (diakses pada tanggal 5 Februari 2021).<br />
+Sulistyawati, A. (2019). Pengembangan Katalog Tumbuhan Berbunga (Angiospermae) Sebagai Suplemen Bahan Ajar Biologi Pada Materi Plantae (Doctoral Dissertation, Universitas Negeri Semarang).<br />
+Warongan, T. S., Sompie, S. R., &amp; Jacobus, A. 2018. Penerapan Metode Content-Based Image Retrieval untuk Pengenalan Jenis Bunga. Jurnal Teknik Informatika, 13(3).<br />
+Windarto, A. P. 2017. Implementasi Jst Dalam Menentukan Kelayakan Nasabah Pinjaman Kur Pada Bank Mandiri Mikro Serbelawan Dengan Metode Backpropogation. J-SAKTI (Jurnal Sains Komputer dan Informatika), 1(1), 12-23.
+											</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details">
+
+						
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link file" href="https://jurnal.wicida.ac.id/index.php/sebatik/article/view/1297/374">
+
+		
+	BUY FULL ISSUE
+
+	</a>
+							</li>
+													<li>
+								
+	
+							
+
+<a class="obj_galley_link pdf" href="https://jurnal.wicida.ac.id/index.php/sebatik/article/view/1297/416">
+
+		
+	PDF
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Published
+					</h2>
+					<div class="value">
+																			<span>2021-06-01</span>
+																	</div>
+				</section>
+							</div>
+			
+										<div class="item citation">
+					<section class="sub_item citation_display">
+						<h2 class="label">
+							How to Cite
+						</h2>
+						<div class="value">
+							<div id="citationOutput" role="region" aria-live="polite">
+								<div class="csl-bib-body">
+  <div class="csl-entry">Pratiwi, H. A., Cahyanti, M. and Lamsani, M. (2021) “IMPLEMENTASI DEEP LEARNING FLOWER SCANNER MENGGUNAKAN METODE CONVOLUTIONAL NEURAL NETWORK”, <i>Sebatik</i>, 25(1), pp. 124–130. doi: 10.46984/sebatik.v25i1.1297.</div>
+</div>
+							</div>
+							<div class="citation_formats">
+								<button class="cmp_button citation_formats_button" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+									More Citation Formats
+								</button>
+								<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+									<ul class="citation_formats_styles">
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/get/acm-sig-proceedings?submissionId=1297&amp;publicationId=587"
+													data-load-citation
+													data-json-href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/get/acm-sig-proceedings?submissionId=1297&amp;publicationId=587&amp;return=json"
+												>
+													ACM
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/get/harvard-cite-them-right?submissionId=1297&amp;publicationId=587"
+													data-load-citation
+													data-json-href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/get/harvard-cite-them-right?submissionId=1297&amp;publicationId=587&amp;return=json"
+												>
+													Harvard
+												</a>
+											</li>
+																					<li>
+												<a
+													aria-controls="citationOutput"
+													href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/get/ieee?submissionId=1297&amp;publicationId=587"
+													data-load-citation
+													data-json-href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/get/ieee?submissionId=1297&amp;publicationId=587&amp;return=json"
+												>
+													IEEE
+												</a>
+											</li>
+																			</ul>
+																			<div class="label">
+											Download Citation
+										</div>
+										<ul class="citation_formats_styles">
+																							<li>
+													<a href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/download/ris?submissionId=1297&amp;publicationId=587">
+														<span class="fa fa-download"></span>
+														Endnote/Zotero/Mendeley (RIS)
+													</a>
+												</li>
+																							<li>
+													<a href="https://jurnal.wicida.ac.id/index.php/sebatik/citationstylelanguage/download/bibtex?submissionId=1297&amp;publicationId=587">
+														<span class="fa fa-download"></span>
+														BibTeX
+													</a>
+												</li>
+																					</ul>
+																	</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Issue
+							</h2>
+							<div class="value">
+								<a class="title" href="https://jurnal.wicida.ac.id/index.php/sebatik/issue/view/32">
+									Vol. 25 No. 1 (2021): Juni 2021
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Section
+							</h2>
+							<div class="value">
+								Articles
+							</div>
+						</section>
+					
+									</div>
+			
+															
+										<div class="item copyright">
+					<h2 class="label">
+						License
+					</h2>
+										<p><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSkW1TxamOOvp1RFdoXj8gb6-YOooGVtDkoQC7ios6GTvjTwmCxd7F-rqe0sXHYEg/pubchart?oid=1369116973&amp;format=interactive" width="236" height="150" frameborder="0" scrolling="no" seamless=""></iframe></p>
+<div class="per-detail_abstract" style="box-sizing: border-box; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 200; letter-spacing: normal; orphans: 0; text-indent: 0px; text-transform: none; white-space: normal; widows: 0; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; padding: 10px; cursor: default; border: 1px solid #e8e3e3; color: #424242; text-align: justify; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; background-color: #ffffff;">
+<p><a style="color: #113241; font-family: 'Noto Sans', Arial, Helvetica, sans-serif; font-size: 14px; text-align: start;" href="https://app.dimensions.ai/analytics/publication/overview/timeline?or_facet_source_title=jour.1390358&amp;local:indicator-y1=citation-per-year-publications" target="_blank" rel="noopener"><img src="/public/site/images/pajarok/dimUntitled.png"></a></p>
+</div>
+<p>&nbsp;</p>
+<div class="per-detail_abstract" style="box-sizing: border-box; font-size: 10px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 200; letter-spacing: normal; orphans: 0; text-indent: 0px; text-transform: none; white-space: normal; widows: 0; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin: 0px; padding: 10px; cursor: default; border: 1px solid #e8e3e3; color: #424242; text-align: justify; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; background-color: #ffffff;">
+<p>Authors retain all their rights to the published works, such as (but not limited to) the following rights; Copyright and other proprietary rights relating to the article, such as patent rights, The right to use the substance of the article in own future works, including lectures and books, The right to reproduce the article for own purposes, The right to self-archive the article</p>
+</div>
+				</div>
+			
+			
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+	</div><!-- pkp_structure_main -->
+
+									<div class="pkp_structure_sidebar left" role="complementary" aria-label="Sidebar">
+				 
+<div class="pkp_block block_custom" id="customblock-Editorial">
+	<h2 class="title pkp_screen_reader">Editorial</h2>
+	<div class="content">
+		<p><span class="title"> Download</span></p>
+<ul>
+<li><a class="obj_galley_link pdf" href="https://drive.google.com/file/d/15WIZTk0ZAos85-tR2npTPYLCYuZSaCYL/view" target="_blank" rel="noopener">Template Penulisan 2024</a></li>
+</ul>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-Indexing">
+	<h2 class="title pkp_screen_reader">Indexing</h2>
+	<div class="content">
+		<p><span class="title">Indexing</span></p>
+<p><a href="https://sinta.kemdikbud.go.id/journals/profile/7597"><img src="/public/site/images/rezapolitani/download_(2).png"></a></p>
+<div class="span-header span3" style="padding-top: 0.7em;"><a href="https://search.crossref.org/?q=sebatik&amp;publisher-name=STMIK+Widya+Cipta+Dharma"><img class="n3VNCb" style="width: 44px; height: 44px; margin: 0px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/DOI_logo.svg/1024px-DOI_logo.svg.png" alt="File:DOI logo.svg - Wikimedia Commons" data-noaft="1"></a><a class="home-link" href="https://search.crossref.org/?q=sebatik&amp;from_ui=yes">&nbsp;&nbsp; <img src="https://assets.crossref.org/logo/crossref-logo-landscape-100.png"></a>&nbsp;&nbsp;
+<div style="background: #fcb426;">&nbsp;</div>
+</div>
+<div class="bRMDJf islir" style="margin-left: 19px; margin-right: 18px; margin-top: 19px;"><a href="https://app.dimensions.ai/discover/publication?or_facet_source_title=jour.1390358"><img src="https://www.digital-science.com/wp-content/uploads/2018/01/dem-press.png" alt="Digital Science Launches Dimensions: a Next-generation Research and  Discovery Platform Linking 124 Million Documents, Providing Free Search and  Citation Data Across 86 Million Articles - Digital Science"></a></div>
+<p><a href="https://scholar.google.co.id/citations?user=Sty1UQwAAAAJ&amp;hl=id"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Google_Scholar_logo_2015.PNG" alt="File:Google Scholar logo 2015.PNG - Wikimedia Commons"></a></p>
+<p><a href="https://portal.issn.org/resource/issn/2621-069X" target="_blank" rel="noopener"><img src="https://portal.issn.org/sites/all/themes/customissn/img/search-result-logo-horizontal-TEST.jpg" alt="logo"></a></p>
+<p>&nbsp;<a href="http://isjd.pdii.lipi.go.id/index.php/public_no_login/index_direktori#" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/EX3k_qjLueAfNiRwrs4YK3OWzO4e-GNGd5URUKetbTdBej9oNnZ4aVO_UJz6iD_9QM6qXn-FPcXfjg_1f_7iWSpRKI0Af4Vtur0CYyNrEO6gngxDNb09vdTewbgbviU8dnTZTYQ9aBFRdedZCpSI3GVMQOFg6qrQ1QSRNbVkvV5yD0ea7oXe9bSKCy2IpfLRnOYvlQYzyFNflkzvPmBPRYizpZgwLbSPPho3WGl7jR6gO9wsJxIxkP1CBBRxewmVn4R9v_AQSJC0Wj7VrvaOqaWO-vbbkG42vfKaV-EtsycZITq4FSv9XdkIUvG5J1xlMPo-BcQCK3YdbxInFIYNVnZDAAs8xmJlDfyK_Gae3onSqUzOx21_WABU73RdMvrCWyFjJ-k9D64ZGfceWOezke4PVLGAmVz8Wki5K5uvO6H7kK6iWnNtnUC7PrbDO8Yql-gQrb_BYFvzdLYt1Mklt2iKsDlKPgrXBT7_c_hE7OdW-DH4qSwb8_91WXHELG4PZ7mD4006kIKpnz9yDYa-2h-9JYvzzhMEPZOl-i78qSM-OT2FonjjCZKPZ5FC59BbKTr0B3QHC_yp1CiSYLbmBHg-lTmNuyEggN5DxQM7IPVlbHrcr7Ddi2w8R6gAQgN2BDjuYBy18Aqgjicp_ysr2jH8H8LSYLrw=w1280-h338-no" alt="Hasil gambar untuk ISJD LOGO" width="167" height="44"></a></p>
+<p><a href="http://onesearch.id/Search/Results?lookfor=SEBATIK&amp;type=AllFields&amp;filter%5B%5D=collection%3A%22Jurnal+Sebatik%22" target="_blank" rel="noopener"><img src="http://explorer.onesearch.id/public/images/logo-ios-shadow.png" alt="Hasil gambar untuk one search" width="118" height="37"></a></p>
+<p><a href="https://www.neliti.com/id/journals/sebatik" target="_blank" rel="noopener"><img src="https://media.neliti.com/static/img/neliti-blue.svg" width="115" height="37"></a></p>
+<p><a href="http://index.pkp.sfu.ca/index.php/browse/index/3352" target="_blank" rel="noopener"><img src="https://ojs.umrah.ac.id/public/site/images/jermal/PKP_INDEX1.jpg" alt="About the Journal | Jermal"></a></p>
+<p><a href="https://journals.indexcopernicus.com/search/details?id=49330&amp;lang=en" target="_blank" rel="noopener"><img src="https://journals.indexcopernicus.com/img/ici2.png" width="148" height="34"></a></p>
+<p><a href="https://zenodo.org/search?page=1&amp;size=20&amp;q=sebatik" target="_blank" rel="noopener"><img src="http://blog.zenodo.org/static/img/logos/zenodo-gradient-1000.png" alt="Hasil gambar untuk zenodo logo" width="133" height="53"></a></p>
+<p><a style="color: #113241;" href="http://journalseeker.researchbib.com/view/issn/1410-3737" target="_blank" rel="noopener"><img src="https://www.researchbib.com/sites/image/logo.png" alt="ResearchBib" width="137" height="62"></a></p>
+<p><a href="https://issuu.com/sebatik" target="_blank" rel="noopener"><img src="https://static.isu.pub/fe/issuu-brandpages/s3/282/press/assets/brand_package_zip/read%20us%20on%20issuu%20buttons/png/read_us_on_issuu_button_blackSolid.png" alt="Hasil gambar untuk ISSUU LOGO" width="188" height="91"></a></p>
+	</div>
+</div>
+<div class="pkp_block block_make_submission">
+	<h2 class="pkp_screen_reader">
+		Make a Submission
+	</h2>
+
+	<div class="content">
+		<a class="block_make_submission_link" href="https://jurnal.wicida.ac.id/index.php/sebatik/about/submissions">
+			Make a Submission
+		</a>
+	</div>
+</div>
+<div class="pkp_block block_information">
+	<h2 class="title">Information</h2>
+	<div class="content">
+		<ul>
+							<li>
+					<a href="https://jurnal.wicida.ac.id/index.php/sebatik/information/readers">
+						For Readers
+					</a>
+				</li>
+										<li>
+					<a href="https://jurnal.wicida.ac.id/index.php/sebatik/information/authors">
+						For Authors
+					</a>
+				</li>
+										<li>
+					<a href="https://jurnal.wicida.ac.id/index.php/sebatik/information/librarians">
+						For Librarians
+					</a>
+				</li>
+					</ul>
+	</div>
+</div>
+<div class="pkp_block block_Keywordcloud">
+	<h2 class="title">Keywords</h2>
+	<div class="content" id='wordcloud'></div>
+
+	<script>
+		function randomColor() {
+			var cores = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
+			return cores[Math.floor(Math.random()*cores.length)];
+		}
+
+					document.addEventListener("DOMContentLoaded", function() {
+				var keywords = [{"text":"celebrity worship, compulsive buying, penggemar k-pop, emerging adulthood","size":1},{"text":"penilaian risiko","size":1},{"text":"tugas belajar","size":1},{"text":"tgr","size":1},{"text":"akuntabilitas","size":1},{"text":"transparansi","size":1},{"text":"partai politik","size":1},{"text":"pertanggungjawaban","size":1},{"text":"supervised learning","size":1},{"text":"unsupervised learning","size":1},{"text":"akurasi","size":1},{"text":"manajemen risiko","size":1},{"text":"iso 31000 : 2018","size":1},{"text":"analisis risiko","size":1},{"text":"tumbuhan","size":1},{"text":"kebijakan","size":1},{"text":"permainan edukasi","size":1},{"text":"multimedia","size":1},{"text":"tanaman khas kalimantan tengah","size":1},{"text":"ensiklopedia","size":1},{"text":"penelitian dan pengembangan","size":1},{"text":"prototipe","size":1},{"text":"sistem pakar","size":1},{"text":"kerusakan mobil","size":1},{"text":"suzuki","size":1},{"text":"algoritma rete","size":1},{"text":"php","size":1},{"text":"mysql","size":1},{"text":"pemutihan","size":1},{"text":"dosen","size":1},{"text":"strategi komunikasi","size":1},{"text":"ustadz","size":1},{"text":"pengembangan pembelajaran","size":1},{"text":"keterampilan siswa","size":1},{"text":"audit sistem informasi","size":1},{"text":"tata kelola","size":1},{"text":"manajemen keamanan","size":1},{"text":"iso\/iec 27001:2013","size":1},{"text":"sistem penunjang keputussan","size":1},{"text":"topsis","size":1},{"text":"aplikasi web","size":1},{"text":"perekrutan karyawan","size":1},{"text":"pencarian","size":1},{"text":"dakwah","size":1},{"text":"laporan keuangan","size":1},{"text":"merauke","size":1},{"text":"beban usaha","size":1},{"text":"laba usaha","size":1},{"text":"pendapatan usaha","size":1},{"text":"kebijakan moneter","size":1}];
+				var totalWeight = 0;
+				var width = 300;
+				var height = 200;
+				var transitionDuration = 200;	
+				var length_keywords = keywords.length;
+				var layout = d3.layout.cloud();
+
+				layout.size([width, height])
+					.words(keywords)
+					.fontSize(function(d)
+					{
+						return fontSize(+d.size);
+					})
+					.on('end', draw);
+				
+				var svg = d3.select("#wordcloud").append("svg")
+					.attr("viewBox", "0 0 " + width + " " + height)	
+					.attr("width", '100%');		
+				
+				function update() {
+					var words = layout.words();
+					fontSize = d3.scaleLinear().range([16, 34]);
+					if (words.length) {
+						fontSize.domain([+words[words.length - 1].size || 1, +words[0].size]);
+					}
+				}
+				
+				keywords.forEach(function(item,index){totalWeight += item.size;});
+
+				update();
+
+				function draw(words, bounds) {
+					var w = layout.size()[0],
+						h = layout.size()[1];
+
+					scaling = bounds
+						? Math.min(
+							w / Math.abs(bounds[1].x - w / 2),
+							w / Math.abs(bounds[0].x - w / 2),
+							h / Math.abs(bounds[1].y - h / 2),
+							h / Math.abs(bounds[0].y - h / 2),
+						) / 2
+						: 1;
+
+					svg
+					.append("g")
+					.attr(
+						"transform",
+						"translate(" + [w >> 1, h >> 1] + ")scale(" + scaling + ")",
+					)
+					.selectAll("text")
+						.data(words)
+					.enter().append("text")
+						.style("font-size", function(d) { return d.size + "px"; })
+						.style("font-family", 'serif')
+						.style("fill", randomColor)
+						.style('cursor', 'pointer')
+						.style('opacity', 0.7)
+						.attr('class', 'keyword')
+						.attr("text-anchor", "middle")
+						.attr("transform", function(d) {
+							return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+						}) 
+						.text(function(d) { return d.text; })
+						.on("click", function(d, i){
+							window.location = "https://jurnal.wicida.ac.id/index.php/sebatik/search?query=QUERY_SLUG".replace(/QUERY_SLUG/, encodeURIComponent(''+d.text+''));
+						})
+						.on("mouseover", function(d, i) {
+							d3.select(this).transition()
+								.duration(transitionDuration)
+								.style('font-size',function(d) { return (d.size + 3) + "px"; })
+								.style('opacity', 1);
+						})
+						.on("mouseout", function(d, i) {
+							d3.select(this).transition()
+								.duration(transitionDuration)
+								.style('font-size',function(d) { return d.size + "px"; })
+								.style('opacity', 0.7);
+						})
+						.on('resize', function() { update() });
+				}
+
+				layout.start();
+
+			});
+			</script>
+</div>
+
+			</div><!-- pkp_sidebar.left -->
+			</div><!-- pkp_structure_content -->
+
+<div class="pkp_structure_footer_wrapper" role="contentinfo">
+	<a id="pkp_content_footer"></a>
+
+	<div class="pkp_structure_footer">
+
+					<div class="pkp_footer_content">
+				<p><a title="Sebatik Statistics" href="https://statcounter.com/p11643797/summary/?guest=1" target="_blank" rel="noopener"><img class="c1" src="https://c.statcounter.com/11643797/0/804914bb/1/" alt="Hit counters"></a></p>
+<p><a title="Creative Commons" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener"><img src="https://i.creativecommons.org/l/by/4.0/88x31.png" alt="Lisensi Creative Commons" width="108" height="38"></a>&nbsp;&nbsp;SEBATIK Journal is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Lisensi Creative Commons Atribusi 4.0 Internasional</a></p>
+<div class="page page_contact">
+<div class="contact_section">
+<div class="contact primary">
+<h3><strong>Publisher</strong></h3>
+<div class="name">Pusat Penelitian dan Pengabdian Masyarakat (P3M)<br>STMIK Widya Cipta Dharma<br>Samarinda- Kalimantan Timur- Indonesia</div>
+</div>
+<div class="contact support">
+<h3><strong>Office:</strong></h3>
+<div class="name">
+<p>STMIK Widya Cipta Dharma<br>Jl. Prof. M. Yamin No. 25<br>Samarinda, 75123, Indonesia<br>Telp. +62541 736071 Fax. +62541 734468<br>Homepage&nbsp;:&nbsp;<a title="STMIK WICIDA" href="http://www.wicida.ac.id/" target="_blank" rel="noopener">www.wicida.ac.id&nbsp;</a>E-mail :&nbsp;<a title="EMAIL" href="mailto:P3M@wicida.ac.id">P3M@wicida.ac.id</a></p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+			</div>
+		
+		<div class="pkp_brand_footer" role="complementary">
+			<a href="https://jurnal.wicida.ac.id/index.php/sebatik/about/aboutThisPublishingSystem">
+				<img alt="More information about the publishing system, Platform and Workflow by OJS/PKP." src="https://jurnal.wicida.ac.id/templates/images/ojs_brand.png">
+			</a>
+		</div>
+	</div>
+</div><!-- pkp_structure_footer_wrapper -->
+
+</div><!-- pkp_structure_page -->
+
+<script src="https://jurnal.wicida.ac.id/lib/pkp/lib/vendor/components/jquery/jquery.min.js?v=3.3.0.14" type="text/javascript"></script><script src="https://jurnal.wicida.ac.id/lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min.js?v=3.3.0.14" type="text/javascript"></script><script src="https://jurnal.wicida.ac.id/plugins/themes/default/js/lib/popper/popper.js?v=3.3.0.14" type="text/javascript"></script><script src="https://jurnal.wicida.ac.id/plugins/themes/default/js/lib/bootstrap/util.js?v=3.3.0.14" type="text/javascript"></script><script src="https://jurnal.wicida.ac.id/plugins/themes/default/js/lib/bootstrap/dropdown.js?v=3.3.0.14" type="text/javascript"></script><script src="https://jurnal.wicida.ac.id/plugins/themes/default/js/main.js?v=3.3.0.14" type="text/javascript"></script><script src="https://jurnal.wicida.ac.id/plugins/generic/citationStyleLanguage/js/articleCitation.js?v=3.3.0.14" type="text/javascript"></script><script src="https://d3js.org/d3.v4.js?v=3.3.0.14" type="text/javascript"></script><script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js?v=3.3.0.14" type="text/javascript"></script><script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-114983264-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
